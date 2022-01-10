@@ -1,0 +1,82 @@
+.navbar_container {
+    height: 100px;
+    padding: 0px 50px;
+    background-color: #d1411e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+.navbar_item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.navbar_item:nth-child(2) {
+    flex: 3;
+}
+
+.navbar_item:nth-child(3) {
+    justify-content: flex-end;
+}
+
+.call_button {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar_texts {
+    margin-left: 20px;
+    color: white;
+}
+
+.navbar_text:first-child{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.navbar_text:last-child{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar_center_list {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: white;
+}
+
+.navbar_center_listItem {
+    margin: 20px;
+    font-weight: 500;
+}
+
+.navbar_cart {
+    position: relative;
+}
+
+.navbar_cart_counter {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #d1411e;
+}
