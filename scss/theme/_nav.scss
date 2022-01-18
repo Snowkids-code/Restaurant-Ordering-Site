@@ -1,0 +1,9 @@
+.navbar_container {
+    @include centerComponets;
+    background-color: $primary_color;
+    padding: $default_padding;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100px;
+}
