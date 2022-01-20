@@ -4,7 +4,7 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <div className="navbar_container">
+    <div className={styles.navbar_container}>
       <div className={styles.navbar_item}>
         <div className={styles.call_button}>
           <Image
@@ -27,8 +27,8 @@ const Navbar = () => {
           <Image
             src="https://raw.githubusercontent.com/safak/youtube/next-pizza-ui/public/img/logo.png"
             alt="logo"
-            width="160px"
-            height="69px"
+            width="160"
+            height="69"
           />
           <li className={styles.navbar_center_listItem}>Events</li>
           <li className={styles.navbar_center_listItem}>Blogs</li>

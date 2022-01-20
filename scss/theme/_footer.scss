@@ -1,0 +1,58 @@
+.footer_container {
+    height: calc(100vh - 100px);
+    background-color: #222;
+    display: flex;
+}
+
+.footer_item {
+    flex: 1;
+    position: relative;
+    display: flex;
+}
+
+.footer_item:last-child{
+    flex: 2;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+.footer_card {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer_card_title {
+    @include styleText(550, 1.125rem, #b7903c);
+}
+
+.footer_card_address {
+    color: lightgrey;
+}
+
+.footer_card_motto {
+    color: rgb(211, 211, 211);
+}
+
+@media screen and (max-width: 480px) {
+
+    .footer_container{
+        height: auto;
+        text-align: center;
+    }
+
+    .footer_item:first-child{
+        display: none;
+    }
+
+    .footer_item {
+        flex-direction: column;
+    }
+
+    .footer_card_title {
+        font-size: 30px;
+    }
+
+    .footer_card_address {
+        font-size: 20px;
+    }
+}

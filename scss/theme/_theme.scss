@@ -2,4 +2,22 @@
 @import "mixins";
 
 //nav bar styles
-@import "nav"
+@import "nav";
+
+//slider
+@import "_slider";
+
+//pizza list
+@import "_pizzaList";
+
+//footer
+@import "_footer";
+
+//product
+@import "_product";
+
+//cart
+@import "_cart";
+
+//orders
+@import "orders";

@@ -1,5 +1,17 @@
-@mixin centerComponets {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@mixin centerComponets($jc) {
+  display: flex;
+  justify-content: $jc;
+  align-items: center;
+}
+
+@mixin styleText($fw, $fs, $color) {
+  font-weight: $fw;
+  font-size: $fs;
+  color: $color;
+}
+
+@mixin sizePosition($pos, $width, $height) {
+  position: $pos;
+  width: $width;
+  height: $height;
 }

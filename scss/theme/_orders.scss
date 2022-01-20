@@ -1,0 +1,94 @@
+.order_container {
+  padding: 50px;
+  display: flex;
+}
+
+.order_left {
+  flex: 2;
+}
+
+.order_row:last-child {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.order_right {
+  flex: 1;
+}
+
+.order_button {
+  background-color: white;
+  height: 30px;
+  color: teal;
+  font-weight: bold;
+  cursor: not-allowed;
+  margin-top: 20px;
+}
+
+.order_done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order_progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: inProgress 1s ease infinite alternate;
+}
+
+@keyframes inProgress {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.order_undone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.order_undone .order_checked_icon,
+.order_progress .order_checked_icon {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .order_container {
+    flex-direction: column;
+  }
+
+  .order_id::before {
+    content: "Order ID: ";
+    font-weight: 500;
+  }
+
+  .customer_name::before {
+    content: "Customer: ";
+    font-weight: 500;
+  }
+
+  .customer_address::before {
+    content: "Address: ";
+    font-weight: 500;
+  }
+
+  .order_row:last-child {
+    width: 100%;
+    @include centerComponets(center);
+    flex-direction: column;
+  }
+
+  .order_done,
+  .order_progress,
+  .order_undone {
+    margin-bottom: 20px;
+  }
+}

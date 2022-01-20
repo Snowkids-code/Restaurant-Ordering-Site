@@ -1,0 +1,144 @@
+.product_container {
+  height: calc(100vh - 100px);
+  display: flex;
+}
+
+.product_left {
+  flex: 1;
+  height: 100%;
+  @include centerComponets(center);
+}
+
+.product_right {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.product_image_container {
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+.product_title {
+}
+
+.product_price {
+  @include styleText(400, 1.5rem, $primary_color);
+  width: fit-content;
+  border-bottom: 1px solid $primary_color;
+}
+
+.product_description {
+}
+
+.product_sizes {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.product_size {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.product_size:nth-child(2) {
+  width: 40px;
+  height: 40px;
+}
+
+.product_size:nth-child(3) {
+  height: 50px;
+  width: 50px;
+}
+
+.product_number {
+  position: absolute;
+  top: -5px;
+  right: -20px;
+  background-color: teal;
+  color: white;
+  font-size: 12px;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+
+.product_ingredients {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.product_option {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.product_ingredients_checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.product_add {
+}
+
+.product_quantity {
+  width: 50px;
+  height: 30px;
+}
+
+.product_cart {
+  height: 30px;
+  margin-left: 10px;
+  background-color: $primary_color;
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .product_container {
+    height: auto;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .product_image_container {
+    width: 70vw;
+    height: 70vh;
+  }
+
+  .product_sizes {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .product_ingredients {
+    flex-direction: column;
+  }
+
+  .product_option {
+    margin: 10px;
+    font-size: 18px;
+  }
+
+  .product_ingredients_checkbox {
+    width: 25px;
+    height: 25px;
+  }
+
+  .product_cart,
+  .product_quantity {
+    height: 50px;
+    padding: 10px 20px;
+  }
+}
