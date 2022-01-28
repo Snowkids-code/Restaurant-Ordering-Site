@@ -10,7 +10,7 @@
 }
 
 .pizza_list_wrapper {
-  @include centerComponets(flex-start);
+  @include centerComponets(center);
   width: 100%;
   flex-wrap: wrap;
   padding: 0 50px;

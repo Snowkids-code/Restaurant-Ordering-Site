@@ -1,7 +1,7 @@
 import React from "react";
 import PizzaCard from "./PizzaCard";
 
-const PizzaList = () => {
+const PizzaList = ({ pizza }) => {
   return (
     <div className="pizza_list_container">
       <h1 className="pizza_list_title">THE BEST PIZZA IN TOWN</h1>
@@ -12,16 +12,9 @@ const PizzaList = () => {
         commodo consequat.
       </p>
       <div className="pizza_list_wrapper">
-          <PizzaCard/>
-          <PizzaCard/>
-          <PizzaCard/>
-          <PizzaCard/>
-          <PizzaCard/>
-          <PizzaCard/>
-          <PizzaCard/>
-          <PizzaCard/>
-          <PizzaCard/>
-          <PizzaCard/>
+        {pizza.map((pizza) => (
+          <PizzaCard pizza={pizza} />
+        ))}
       </div>
     </div>
   );

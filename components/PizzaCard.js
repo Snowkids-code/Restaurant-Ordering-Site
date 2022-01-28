@@ -1,20 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const PizzaCard = () => {
+const PizzaCard = ({ pizza }) => {
   return (
     <div className="pizza_card_container">
-      <Image
-        src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395__480.jpg"
-        alt="pizza"
-        width={500}
-        height={500}
-        objectFit="contain"
-      />
-      <h1 className="pizza_card_title">FIORI DI ZUCCA</h1>
-      <span className="pizza_card_price">$19.90</span>
-      <p className="pizza_card_description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </p>
+      <Link href={`/product/${pizza._id}`}>
+        <Image
+          src={pizza.img}
+          alt="pizza"
+          width={500}
+          height={500}
+          objectFit="contain"
+        />
+      </Link>
+      <h1 className="pizza_card_title">{pizza.title}</h1>
+      <span className="pizza_card_price">${pizza.prices[0]}</span>
+      <p className="pizza_card_description">{pizza.desc}</p>
     </div>
   );
 };
