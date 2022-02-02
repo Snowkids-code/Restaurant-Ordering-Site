@@ -1,5 +1,11 @@
 .navbar_container {
     height: 100px;
+    background-color: #d1411e;
+    width: 100%;
+}
+
+.navbar_wrapper {
+    height: 100px;
     padding: 0px 50px;
     background-color: #d1411e;
     display: flex;
@@ -8,6 +14,8 @@
     position: sticky;
     top: 0;
     z-index: 999;
+    margin: 0 auto;
+    width: 90rem;
 }
 
 .navbar_item {
