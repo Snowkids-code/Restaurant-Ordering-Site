@@ -21,6 +21,14 @@ const Navbar = () => {
           </div>
         </div>
         <div className={styles.navbar_item}>
+          <div className={styles.iDrop} style={{ overflow: "hidden" }}>
+            <button className={styles.dropdownBtn}>Home</button>
+            <div className={styles.dropdownContent}>
+              <a className={styles.drop}>Link 1</a>
+              <a className={styles.drop}>Link 2</a>
+              <a className={styles.drop}>Link 3</a>
+            </div>
+          </div>
           <ul className={styles.navbar_center_list}>
             <li className={styles.navbar_center_listItem}>HomePage</li>
             <li className={styles.navbar_center_listItem}>Products</li>
