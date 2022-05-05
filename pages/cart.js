@@ -8,6 +8,7 @@ function cart() {
           <tr className="cart_tr_title">
             <th>Product</th>
             <th>Name</th>
+            
             <th>Extras</th>
             <th>Price</th>
             <th>Quantity</th>
