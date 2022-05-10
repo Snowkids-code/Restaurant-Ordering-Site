@@ -1,6 +1,8 @@
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartSlice";
 
 const Product = ({ pizza }) => {
   const [price, setPrice] = useState(pizza.prices[0]);
@@ -34,6 +36,12 @@ const Product = ({ pizza }) => {
       setExtras(extras.filter((extra) => extra._id != option._id));
     }
   };
+
+  const dispatch = useDispatch();
+
+  const handleClick= () => {
+    dispatch(addProduct({...pizza,extras,price,quantity}))
+  }
 
   return (
     <div className="product_container">
@@ -98,7 +106,7 @@ const Product = ({ pizza }) => {
         </div>
         <div className="product_add">
           <input onChange={(e) => setQuantity(e.target.value)} type="number" defaultValue={1} className="product_quantity" />
-          <button className="product_cart">Add to cart</button>
+          <button className="product_cart" onClick={handleClick}>Add to cart</button>
         </div>
       </div>
     </div>

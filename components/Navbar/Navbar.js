@@ -1,8 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { useSelector } from "react-redux";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const quantity = useSelector((state) => state.cart.quantity);
   return (
     <div className={styles.navbar_container}>
       <div className={styles.navbar_wrapper}>
@@ -44,17 +47,19 @@ const Navbar = () => {
             <li className={styles.navbar_center_listItem}>Contact Us</li>
           </ul>
         </div>
-        <div className={styles.navbar_item}>
-          <div className={styles.navbar_cart}>
-            <Image
-              src="https://raw.githubusercontent.com/safak/youtube/next-pizza-ui/public/img/cart.png"
-              alt="logo"
-              width="30px"
-              height="30px"
-            />
-            <div className={styles.navbar_cart_counter}>2</div>
+        <Link href='/cart' passHref>
+          <div className={styles.navbar_item}>
+            <div className={styles.navbar_cart}>
+              <Image
+                src="https://raw.githubusercontent.com/safak/youtube/next-pizza-ui/public/img/cart.png"
+                alt="logo"
+                width="30px"
+                height="30px"
+              />
+              <div className={styles.navbar_cart_counter}>{quantity}</div>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
