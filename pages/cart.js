@@ -9,12 +9,14 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
+import OrderDetails from "../components/Modal/orderDetails";
 
 function cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
   const [open, setOpen] = useState(false);
+  const [cash, setCash] = useState(false);
 
   // This values are the props in the UI
   const amount = cart.total;
@@ -157,7 +159,7 @@ function cart() {
           </div>
           {open ? (
             <div className="cart_payment_method">
-              <button className="cart_cash_button">CASH ON DELIVERY</button>
+              <button className="cart_cash_button" onClick={()=>setCash(true)}>CASH ON DELIVERY</button>
               <PayPalScriptProvider
                 options={{
                   "client-id":
@@ -187,6 +189,7 @@ function cart() {
           </PayPalScriptProvider> */}
         </div>
       </div>
+      {cash && <OrderDetails total={cart.total} createOrder={createOrder}/>}
     </div>
   );
 }

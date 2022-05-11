@@ -33,7 +33,9 @@ const Navbar = () => {
             </div>
           </div>
           <ul className={styles.navbar_center_list}>
-            <li className={styles.navbar_center_listItem}>HomePage</li>
+            <Link href="/">
+              <li className={styles.navbar_center_listItem}>HomePage</li>
+            </Link>
             <li className={styles.navbar_center_listItem}>Products</li>
             <li className={styles.navbar_center_listItem}>Menu</li>
             <Image
@@ -47,7 +49,7 @@ const Navbar = () => {
             <li className={styles.navbar_center_listItem}>Contact Us</li>
           </ul>
         </div>
-        <Link href='/cart' passHref>
+        <Link href="/cart" passHref>
           <div className={styles.navbar_item}>
             <div className={styles.navbar_cart}>
               <Image
