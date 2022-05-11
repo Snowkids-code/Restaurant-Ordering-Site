@@ -1,64 +1,75 @@
+import { List, Menu, MenuItem } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
+  const [menu, setMenu] = useState(false);
   return (
-    <div className={styles.navbar_container}>
-      <div className={styles.navbar_wrapper}>
-        <div className={styles.navbar_item}>
-          <div className={styles.call_button}>
+    <div className="navbar_container">
+      <div className="navbar_wrapper">
+        <div className="navbar_menu_button" style={{ overflow: "hidden" }} onClick={()=>setMenu(true)}>
+          Menu
+          {menu && (
+            <ul className="navbar_center_list_menu">
+              <Link href="/">
+                <li className="navbar_center_listItem_menu">HomePage</li>
+              </Link>
+              <li className="navbar_center_listItem_menu">Products</li>
+              <li className="navbar_center_listItem_menu">Menu</li>
+              <li className="navbar_center_listItem_menu">Events</li>
+              <li className="navbar_center_listItem_menu">Blogs</li>
+              <li className="navbar_center_listItem_menu">Contact Us</li>
+            </ul>
+          )}
+        </div>
+        <div className="navbar_item">
+          <div className="call_button">
             <Image
-              src="https://raw.githubusercontent.com/safak/youtube/next-pizza-ui/public/img/telephone.png"
+              src="/img/Phoenix.jpeg"
               alt="call_img"
-              width="32"
-              height="32"
+              width="52"
+              height="52"
             />
           </div>
-          <div className={styles.navbar_texts}>
-            <div className={styles.navbar_text}>ORDER NOW!</div>
-            <div className={styles.navbar_text}>012 345 678</div>
+          <div className="nav_texts">
+            <div className="navbar_text">ORDER NOW!</div>
+            <div className="navbar_text">+012 345 678</div>
           </div>
         </div>
-        <div className={styles.navbar_item}>
-          <div className={styles.iDrop} style={{ overflow: "hidden" }}>
+        <div className="navbar_item">
+          {/* <div className={styles.iDrop} style={{ overflow: "hidden" }}>
             <button className={styles.dropdownBtn}>Home</button>
             <div className={styles.dropdownContent}>
               <a className={styles.drop}>Link 1</a>
               <a className={styles.drop}>Link 2</a>
               <a className={styles.drop}>Link 3</a>
             </div>
-          </div>
-          <ul className={styles.navbar_center_list}>
+          </div> */}
+          <ul className="navbar_center_list">
             <Link href="/">
-              <li className={styles.navbar_center_listItem}>HomePage</li>
+              <li className="navbar_center_listItem">HomePage</li>
             </Link>
-            <li className={styles.navbar_center_listItem}>Products</li>
-            <li className={styles.navbar_center_listItem}>Menu</li>
-            <Image
-              src="https://raw.githubusercontent.com/safak/youtube/next-pizza-ui/public/img/logo.png"
-              alt="logo"
-              width="160"
-              height="69"
-            />
-            <li className={styles.navbar_center_listItem}>Events</li>
-            <li className={styles.navbar_center_listItem}>Blogs</li>
-            <li className={styles.navbar_center_listItem}>Contact Us</li>
+            <li className="navbar_center_listItem">Products</li>
+            <li className="navbar_center_listItem">Menu</li>
+            <h1 className="nav_title">Phoenix</h1>
+            <li className="navbar_center_listItem">Events</li>
+            <li className="navbar_center_listItem">Blogs</li>
+            <li className="navbar_center_listItem">Contact Us</li>
           </ul>
         </div>
         <Link href="/cart" passHref>
-          <div className={styles.navbar_item}>
-            <div className={styles.navbar_cart}>
+          <div className="navbar_item">
+            <div className="navbar_cart">
               <Image
                 src="https://raw.githubusercontent.com/safak/youtube/next-pizza-ui/public/img/cart.png"
                 alt="logo"
                 width="30px"
                 height="30px"
               />
-              <div className={styles.navbar_cart_counter}>{quantity}</div>
+              <div className="navbar_cart_counter">{quantity}</div>
             </div>
           </div>
         </Link>
