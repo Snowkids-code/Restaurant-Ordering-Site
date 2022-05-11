@@ -1,7 +1,8 @@
+import axios from "axios";
 import Image from "next/image";
 
-const Order = () => {
-  const status = 0;
+const Order = ({order}) => {
+  const status = order.status;
 
   const statusClass = (index) => {
     if (index - status < 1) {
@@ -28,16 +29,16 @@ const Order = () => {
             </tr>
             <tr className="cart_tr">
               <td>
-                <span className="order_id">125646sd85</span>
+                <span className="order_id">{order._id}</span>
               </td>
               <td>
-                <span className="customer_name">John Doe</span>
+                <span className="customer_name">{order.customer}</span>
               </td>
               <td>
-                <span className="customer_address">Elton st. 212-33 LA</span>
+                <span className="customer_address">{order.address}</span>
               </td>
               <td>
-                <span className="cart_product_total">$39.01</span>
+                <span className="cart_product_total">${order.total}</span>
               </td>
             </tr>
           </table>
@@ -129,13 +130,13 @@ const Order = () => {
         <div className="cart_wrapper">
           <h2 className="cart_product_title">CART TOTAL</h2>
           <div className="cart_total_text">
-            <b className="cart_total_text_title">Subtotal:</b>$79.60
+            <b className="cart_total_text_title">Subtotal:</b>${order.total}
           </div>
           <div className="cart_total_text">
             <b className="cart_total_text_title">Discount:</b>$0.00
           </div>
           <div className="cart_total_text">
-            <b className="cart_total_text_title">Total:</b>$79.60
+            <b className="cart_total_text_title">Total:</b>${order.total}
           </div>
           <button disabled className="order_button">
             PAID
@@ -144,6 +145,13 @@ const Order = () => {
       </div>
     </div>
   );
+};
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+  return {
+    props: { order: res.data },
+  };
 };
 
 export default Order;

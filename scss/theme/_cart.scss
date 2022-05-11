@@ -55,6 +55,22 @@
   margin-top: 20px;
 }
 
+.cart_payment_method {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .cart_cash_button {
+    padding: 10px 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    background-color: #fff;
+    color: teal;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .cart_container {
     flex-direction: column;
