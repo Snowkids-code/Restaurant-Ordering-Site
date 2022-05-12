@@ -145,7 +145,7 @@ function cart() {
           ))}
         </table>
       </div>
-      <div className="cart_right" onClick={() => setOpen(true)}>
+      <div className="cart_right">
         <div className="cart_wrapper">
           <h2 className="cart_product_title">CART TOTAL</h2>
           <div className="cart_total_text">
