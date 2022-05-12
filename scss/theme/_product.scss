@@ -1,17 +1,22 @@
 .product_container {
-  height: calc(100vh - 100px);
+  height: calc(80vh - 100px);
   display: flex;
+  @include centerComponets(center);
 }
 
 .product_left {
   flex: 1;
   height: 100%;
   @include centerComponets(center);
+
+  @media screen and (max-width: 1000px) {
+    flex: 1.5;
+  }
 }
 
 .product_right {
   flex: 1;
-  padding: 20px;
+  padding: 1.25rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -40,22 +45,30 @@
   width: 40%;
   justify-content: space-between;
   cursor: pointer;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
 }
 
 .product_size {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   position: relative;
+
+  @media screen and (max-width: 1000px) {
+    margin: 1rem 0;
+  }
 }
 
 .product_size:nth-child(2) {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .product_size:nth-child(3) {
-  height: 50px;
-  width: 50px;
+  height: 3.125rem;
+  width: 3.125rem;
 }
 
 .product_number {
@@ -64,40 +77,40 @@
   right: -20px;
   background-color: teal;
   color: white;
-  font-size: 12px;
+  font-size: 0.75rem;
   padding: 0 5px;
   border-radius: 10px;
 }
 
 .product_ingredients {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 
 .product_option {
   display: flex;
   align-items: center;
-  margin-right: 10px;
-  font-size: 14px;
+  margin-right: 0.625rem;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 
 .product_ingredients_checkbox {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .product_add {
 }
 
 .product_quantity {
-  width: 50px;
-  height: 30px;
+  width: 3.125rem;
+  height: 1.875rem;
 }
 
 .product_cart {
-  height: 30px;
-  margin-left: 10px;
+  height: 1.875rem;
+  margin-left: 0.625rem;
   background-color: $primary_color;
   color: white;
   border: none;
@@ -119,7 +132,7 @@
 
   .product_sizes {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 1.25rem;
   }
 
   .product_ingredients {
@@ -127,18 +140,18 @@
   }
 
   .product_option {
-    margin: 10px;
-    font-size: 18px;
+    margin: 0.625rem;
+    font-size: 1.125rem;
   }
 
   .product_ingredients_checkbox {
-    width: 25px;
-    height: 25px;
+    width: 1.5625rem;
+    height: 1.5625rem;
   }
 
   .product_cart,
   .product_quantity {
-    height: 50px;
-    padding: 10px 20px;
+    height: 3.125rem;
+    padding: 0.625rem 1.25rem;
   }
 }
