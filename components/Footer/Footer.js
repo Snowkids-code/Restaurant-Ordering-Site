@@ -4,9 +4,9 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="footer_container">
-      <div className="footer_item">
+      <div className="footer_item" style={{marginTop: "1rem"}}>
         <Image
-          src="https://media.istockphoto.com/photos/cheesy-pepperoni-pizza-picture-id938742222?s=612x612"
+          src="/img/pizza_slider4.jpeg"
           alt="image"
           layout="fill"
           objectFit="contain"
@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="footer_item">
         <div className="footer_card">
           <h2 className="footer_card_motto">
-            OH YES, WE DID.THE LAMA PIZZA, WELL BAKED SLICE OF PIZZA.
+            OH YES, PHOENIX PIZZA RESTAURANT IS OPEN FOR BUSINESS.
           </h2>
         </div>
         <div className="footer_card">

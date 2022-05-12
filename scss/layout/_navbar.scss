@@ -2,7 +2,7 @@
   height: 6.25rem;
   background-color: #d1411e;
   width: 100%;
-
+  
   .navbar_wrapper {
     height: 100px;
     padding: 0px 3rem;
@@ -31,6 +31,8 @@
           list-style: none;
           left: 5px;
           top: 3rem;
+          background-color: #d1411e;
+          padding: 1rem;
 
           .navbar_center_listItem_menu {
             margin-bottom: 0.75rem;
@@ -45,6 +47,10 @@
           display: flex;
           flex: 1;
           justify-content: center;
+
+          @media screen and (max-width: 300px) {
+            display: none;
+          }
         }
       }
     }
@@ -111,7 +117,7 @@
         }
 
         .navbar_center_listItem {
-          margin: 20px;
+          margin: 1.25rem;
           font-weight: 500;
           cursor: pointer;
         }
@@ -140,5 +146,3 @@
     }
   }
 }
-
-

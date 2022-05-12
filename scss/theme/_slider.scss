@@ -1,14 +1,18 @@
 .slider_container {
   height: calc(100vh - 100px);
-  background-color: $primary_color;
+  background-color: #d1411e;
   overflow: hidden;
   position: relative;
   margin: 0 auto;
   width: 100%;
+
+  @media screen and (max-width: 1000px) {
+    height: 70vh;
+  }
 }
 
 .arrow_container {
-  @include sizePosition(absolute, 10%, 20%);
+  @include sizePosition(absolute, 5%, 10%);
   top: 0;
   bottom: 0;
   margin: auto;

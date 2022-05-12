@@ -5,7 +5,7 @@ import styles from "./Slider.module.css";
 const Slider = () => {
   const images = [
     "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395__480.jpg",
-    "https://media.istockphoto.com/photos/cheesy-pepperoni-pizza-picture-id938742222?s=612x612",
+    "/img/pizza_slider4.jpeg",
     "https://media.istockphoto.com/photos/mini-salami-pizza-on-a-dark-wooden-background-top-view-picture-id639963606?k=20&m=639963606&s=612x612&w=0&h=LSevcUTvX3N-F2Suj000a-s1qF4uaocsr4RcG5d0aS0=",
   ];
 
