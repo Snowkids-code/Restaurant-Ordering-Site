@@ -1,0 +1,21 @@
+@mixin font ($size, $weight, $color, $height) {
+//   font-family: "HelveticaNeueCyr", Helvetica, Arial, sans-serif;
+  @if $size {
+    font-size: ($size + rem);
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $height {
+    line-height: ($height + rem);
+  }
+}
+
+@mixin centerComponents($jc) {
+  display: flex;
+  justify-content: $jc;
+  align-items: center;
+}

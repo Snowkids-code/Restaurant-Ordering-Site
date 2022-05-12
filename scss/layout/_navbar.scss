@@ -20,11 +20,31 @@
 
       @media screen and (max-width: 1100px) {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         color: white;
         cursor: pointer;
+        width: 100%;
 
         .navbar_center_list_menu {
-            margin-top: 3rem;
+          position: absolute;
+          list-style: none;
+          left: 5px;
+          top: 3rem;
+
+          .navbar_center_listItem_menu {
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: normal;
+            line-height: 1.25rem;
+            cursor: pointer;
+          }
+        }
+
+        .navbar_menu_title {
+          display: flex;
+          flex: 1;
+          justify-content: center;
         }
       }
     }
@@ -120,3 +140,5 @@
     }
   }
 }
+
+

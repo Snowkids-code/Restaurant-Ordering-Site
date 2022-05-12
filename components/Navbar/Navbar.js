@@ -10,8 +10,8 @@ const Navbar = () => {
   return (
     <div className="navbar_container">
       <div className="navbar_wrapper">
-        <div className="navbar_menu_button" style={{ overflow: "hidden" }} onClick={()=>setMenu(true)}>
-          Menu
+        <div className="navbar_menu_button" style={{ overflow: "hidden" }} >
+          <p onClick={()=>setMenu(!menu)}>Menu</p>
           {menu && (
             <ul className="navbar_center_list_menu">
               <Link href="/">
@@ -24,6 +24,7 @@ const Navbar = () => {
               <li className="navbar_center_listItem_menu">Contact Us</li>
             </ul>
           )}
+          <h1 className='navbar_menu_title'>Phoenix</h1>
         </div>
         <div className="navbar_item">
           <div className="call_button">

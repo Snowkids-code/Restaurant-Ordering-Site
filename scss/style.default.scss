@@ -1,2 +1,5 @@
 @import "theme/theme";
-@import "layout/layout"
+@import "layout/layout";
+
+// Abstracts
+@import "abstracts/mixins"; //contains the mixins for the project
