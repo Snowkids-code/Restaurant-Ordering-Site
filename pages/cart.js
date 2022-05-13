@@ -94,90 +94,95 @@ function cart() {
     );
   };
   return (
-    <div className="cart_container">
-      <div className="cart_left">
-        <table className="cart_table">
-          <tr className="cart_tr_title">
-            <th>Product</th>
-            <th>Name</th>
+      <div className="cart_container">
+        <div className="cart_left">
+          <table className="cart_table">
+            <tr className="cart_tr_title">
+              <th>Product</th>
+              <th>Name</th>
 
-            <th>Extras</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-          {cart.products.map((product) => (
-            <tr className="cart_tr" key={product.id}>
-              <td>
-                <div className="cart_image">
-                  <Image
-                    src={product.img}
-                    alt="image"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
-              </td>
-              <td>
-                <span className="cart_product_name">{product.title}</span>
-              </td>
-              <td>
-                <span className="cart_product_extras">
-                  {product.extras.map((extra) => (
-                    <span key={extra.id}>{extra.text}, </span>
-                  ))}
-                </span>
-              </td>
-              <td>
-                <span className="cart_product_price">${product.price}</span>
-              </td>
-              <td>
-                <span className="cart_product_quantity">
-                  {product.quantity}
-                </span>
-              </td>
-              <td>
-                <span className="cart_product_total">
-                  ${product.price * product.quantity}
-                </span>
-              </td>
+              <th>Extras</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
             </tr>
-          ))}
-        </table>
-      </div>
-      <div className="cart_right">
-        <div className="cart_wrapper">
-          <h2 className="cart_product_title">CART TOTAL</h2>
-          <div className="cart_total_text">
-            <b className="cart_total_text_title">Subtotal:</b>${cart.total}
-          </div>
-          <div className="cart_total_text">
-            <b className="cart_total_text_title">Discount:</b>$0.00
-          </div>
-          <div className="cart_total_text">
-            <b className="cart_total_text_title">Total:</b>${cart.total}
-          </div>
-          {open ? (
-            <div className="cart_payment_method">
-              <button className="cart_cash_button" onClick={()=>setCash(true)}>CASH ON DELIVERY</button>
-              <PayPalScriptProvider
-                options={{
-                  "client-id":
-                    "ARIbV8OWgUm188KP1Y1FPpOUgybyEawZyUjUCJIhlLgjWSon-bLJXekI4rNleuE0giWhfnCBc_58-un_",
-                  components: "buttons",
-                  currency: "USD",
-                  "disable-funding": "credit,card",
-                }}
-              >
-                <ButtonWrapper currency={currency} showSpinner={false} />
-              </PayPalScriptProvider>
+            {cart.products.map((product) => (
+              <tr className="cart_tr" key={product.id}>
+                <td>
+                  <div className="cart_image">
+                    <Image
+                      src={product.img}
+                      alt="image"
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <span className="cart_product_name">{product.title}</span>
+                </td>
+                <td>
+                  <span className="cart_product_extras">
+                    {product.extras.map((extra) => (
+                      <span key={extra.id}>{extra.text}, </span>
+                    ))}
+                  </span>
+                </td>
+                <td>
+                  <span className="cart_product_price">${product.price}</span>
+                </td>
+                <td>
+                  <span className="cart_product_quantity">
+                    {product.quantity}
+                  </span>
+                </td>
+                <td>
+                  <span className="cart_product_total">
+                    ${product.price * product.quantity}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </table>
+        </div>
+        <div className="cart_right">
+          <div className="cart_wrapper">
+            <h2 className="cart_product_title">CART TOTAL</h2>
+            <div className="cart_total_text">
+              <b className="cart_total_text_title">Subtotal:</b>${cart.total}
             </div>
-          ) : (
-            <button className="cart_button" onClick={() => setOpen(true)}>
-              CHECK OUT NOW!
-            </button>
-          )}
-          {/* <PayPalScriptProvider
+            <div className="cart_total_text">
+              <b className="cart_total_text_title">Discount:</b>$0.00
+            </div>
+            <div className="cart_total_text">
+              <b className="cart_total_text_title">Total:</b>${cart.total}
+            </div>
+            {open ? (
+              <div className="cart_payment_method">
+                <button
+                  className="cart_cash_button"
+                  onClick={() => setCash(true)}
+                >
+                  CASH ON DELIVERY
+                </button>
+                <PayPalScriptProvider
+                  options={{
+                    "client-id":
+                      "ARIbV8OWgUm188KP1Y1FPpOUgybyEawZyUjUCJIhlLgjWSon-bLJXekI4rNleuE0giWhfnCBc_58-un_",
+                    components: "buttons",
+                    currency: "USD",
+                    "disable-funding": "credit,card",
+                  }}
+                >
+                  <ButtonWrapper currency={currency} showSpinner={false} />
+                </PayPalScriptProvider>
+              </div>
+            ) : (
+              <button className="cart_button" onClick={() => setOpen(true)}>
+                CHECK OUT NOW!
+              </button>
+            )}
+            {/* <PayPalScriptProvider
             options={{
               "client-id": "test",
               components: "buttons",
@@ -187,10 +192,10 @@ function cart() {
           >
             <ButtonWrapper currency={currency} showSpinner={false} />
           </PayPalScriptProvider> */}
+          </div>
         </div>
+        {cash && <OrderDetails total={cart.total} createOrder={createOrder} />}
       </div>
-      {cash && <OrderDetails total={cart.total} createOrder={createOrder}/>}
-    </div>
   );
 }
 
