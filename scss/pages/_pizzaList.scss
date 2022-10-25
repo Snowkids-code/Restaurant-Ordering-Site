@@ -37,14 +37,17 @@
 
 .pizza_card_title {
   @include styleText(bold, 1.125rem, $primary_color);
+  margin: 0.15rem 0;
 }
 
 .pizza_card_price {
   @include styleText(bold, 1.125rem, #666);
+  margin: 0.15rem 0;
 }
 
 .pizza_card_description {
   @include styleText(bold, 1.125rem, #777);
+  margin: 0.15rem 0;
   text-align: center;
 }
 
