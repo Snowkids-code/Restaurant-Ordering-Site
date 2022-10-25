@@ -196,9 +196,9 @@ function Cart() {
           </PayPalScriptProvider> */}
             </div>
           </div>
-          {cash && (
-            {/* <OrderDetails total={cart.total} createOrder={createOrder} /> */}
-          )}
+          {/* {cash && (
+            <OrderDetails total={cart.total} createOrder={createOrder} />
+          )} */}
         </div>
       </div>
     </div>
