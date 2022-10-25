@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
-import OrderDetails from "../components/Modal/orderDetails";
+import OrderDetails from "../components/Modal/OrderDetails";
 
 function cart() {
   const dispatch = useDispatch();
