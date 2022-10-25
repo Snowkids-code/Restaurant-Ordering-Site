@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
-import OrderDetails from "../components/Modal/OrderDetails";
+// import OrderDetails from "../components/Modal/OrderDetails";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -197,7 +197,7 @@ function Cart() {
             </div>
           </div>
           {cash && (
-            <OrderDetails total={cart.total} createOrder={createOrder} />
+            {/* <OrderDetails total={cart.total} createOrder={createOrder} /> */}
           )}
         </div>
       </div>
