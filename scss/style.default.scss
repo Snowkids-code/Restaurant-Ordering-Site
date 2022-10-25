@@ -1,5 +1,8 @@
-@import "pages/pages";
-@import "layout/layout";
-
 // Abstracts
 @import "abstracts/mixins"; //contains the mixins for the project
+
+@import "pages/pages";
+@import "layout/layout";
+@import "components/components";
+
+
