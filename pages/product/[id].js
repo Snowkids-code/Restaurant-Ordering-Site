@@ -6,7 +6,7 @@ import { addProduct } from "../../redux/cartSlice";
 import dbConnect from "../../util/mongo";
 import Product from "../../models/Product";
 
-const Product = ({ pizza }) => {
+const SingleProduct = ({ pizza }) => {
   const [price, setPrice] = useState(pizza.prices[0]);
 
   const [size, setSize] = useState(0);
@@ -135,9 +135,9 @@ export const getServerSideProps = async ({ params }) => {
   const res = await Product.findById(params.id)
   return {
     props: {
-      pizza: res.data,
+      pizza: JSON.parse(JSON.stringify(res)),
     },
   };
 };
 
-export default Product;
+export default SingleProduct;
