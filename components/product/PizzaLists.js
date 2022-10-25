@@ -6,8 +6,8 @@ export default function PizzaLists({ pizza }) {
   return (
     <div className="pizza_lists_container">
       {pizza.map((pizza, i) => (
-        <Link href={`/product/${pizza._id}`}>
-          <div className="pizza_wrapper" key={pizza._id}>
+        <Link href={`/product/${pizza._id}`} key={pizza._id}>
+          <div className="pizza_wrapper">
             <div className="pizza_img">
               <Image
                 alt=""
