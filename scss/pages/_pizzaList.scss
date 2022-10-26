@@ -26,8 +26,8 @@
 
 .pizza_wrapper {
   grid-area: main;
-  // @include centerComponets(center);
-  // flex-direction: column;
+  @include centerComponets(center);
+  flex-direction: column;
 }
 
 .pizza_description {
